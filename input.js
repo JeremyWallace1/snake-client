@@ -1,4 +1,5 @@
 //const { stdin } = require("process");
+const { keyMapping } = require("./constants");
 
 // setup interface to handle user input from stdin
 let connection;
@@ -18,31 +19,8 @@ const handleUserInput = function(data) { //When data comes in from your keyboard
     console.log("Exiting the game.");
     process.exit();
   }
-
-  if (data === 'w') {
-    // console.log("Pressed w");
-    connection.write("Move: up");
-  }
-  
-  if (data === 'a') {
-    // console.log("Pressed a");
-    connection.write("Move: left");
-  }
-  
-  if (data === 's') {
-    // console.log("Pressed s");
-    connection.write("Move: down");
-  }
-  
-  if (data === 'd') {
-    // console.log("Pressed d");
-    connection.write("Move: right");
-  }
-  if (data === 'g') {
-    connection.write("Say: I'm gonna get you!");
-  }
-  if (data === 'n') {
-    connection.write("Say: And your little dog!");
+  for (const keyPress in keyMapping) {
+    connection.write(keyMapping[keyPress]);
   }
 };
 
