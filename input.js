@@ -1,4 +1,4 @@
-const { stdin } = require("process");
+//const { stdin } = require("process");
 
 // setup interface to handle user input from stdin
 let connection;
@@ -13,7 +13,7 @@ const setupInput = (conn) => {
   return stdin;
 };
 
-const handleUserInput = function (data) { //When data comes in from your keyboard, the stdin event handler can now interact with the server because the scope in the handler now includes both data from the keyboard AND the connection object!
+const handleUserInput = function(data) { //When data comes in from your keyboard, the stdin event handler can now interact with the server because the scope in the handler now includes both data from the keyboard AND the connection object!
   if (data === '\u0003') {
     console.log("Exiting the game.");
     process.exit();
