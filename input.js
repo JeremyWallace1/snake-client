@@ -15,6 +15,18 @@ const handleUserInput = function () {
       console.log("Exiting the game.");
       process.exit();
     }
+    if (key === '\u0077') {
+      console.log("Pressed w");
+    }
+    if (key === '\u0061') {
+      console.log("Pressed a");
+    }
+    if (key === '\u0073') {
+      console.log("Pressed s");
+    }
+    if (key === '\u0064') {
+      console.log("Pressed d");
+    }
     //process.stdout.write('.');
   });
 };
