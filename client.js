@@ -15,7 +15,13 @@ const connect = function () {
     conn.end();
   });
 
+  conn.on('connect', () => {
+    console.log("Successfully connected to game server");
+    conn.write("Name: JTW");
+  });
+
+  
   return conn;
 };
 
-module.exports = connect; //export the connect module for use in play.js
+module.exports = { connect }; //export the connect object (function) for use in play.js
