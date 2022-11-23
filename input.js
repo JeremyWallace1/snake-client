@@ -19,24 +19,27 @@ const handleUserInput = function (data) { //When data comes in from your keyboar
     process.exit();
   }
 
-  if (data === '\u0077') {
-    console.log("Pressed", data);
-    connection.write('up');
+  if (data === 'w') {
+    // console.log("Pressed w");
+    connection.write("Move: up");
   }
   
-  if (data === '\u0061') {
+  if (data === 'a') {
     // console.log("Pressed a");
-    connection.process(data);
+    connection.write("Move: left");
   }
   
-  if (data === '\u0073') {
+  if (data === 's') {
     // console.log("Pressed s");
-    connection.process(data);
+    connection.write("Move: down");
   }
   
-  if (data === '\u0064') {
+  if (data === 'd') {
     // console.log("Pressed d");
-    connection.process(data);
+    connection.write("Move: right");
+  }
+  if (data === 'p') {
+    connection.write("Say: I'm gonna get you!");
   }
 };
 
