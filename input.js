@@ -20,8 +20,12 @@ const handleUserInput = function(data) { //When data comes in from your keyboard
     process.exit();
   }
   for (const keyPress in keyMapping) {
-    connection.write(keyMapping[keyPress]);
+    if (data === keyPress) {
+      console.log(`keyPress is ${keyMapping[keyPress]}`);
+      connection.write(keyMapping[keyPress]);
+    }
   }
 };
+
 
 module.exports = { setupInput }; // exports the function
