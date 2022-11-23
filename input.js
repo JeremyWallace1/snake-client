@@ -21,7 +21,7 @@ const handleUserInput = function(data) { //When data comes in from your keyboard
   }
   for (const keyPress in keyMapping) {
     if (data === keyPress) {
-      console.log(`keyPress is ${keyMapping[keyPress]}`);
+      //console.log(`keyPress is ${keyMapping[keyPress]}`);
       connection.write(keyMapping[keyPress]);
     }
   }
