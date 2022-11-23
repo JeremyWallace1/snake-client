@@ -38,8 +38,11 @@ const handleUserInput = function(data) { //When data comes in from your keyboard
     // console.log("Pressed d");
     connection.write("Move: right");
   }
-  if (data === 'p') {
+  if (data === 'g') {
     connection.write("Say: I'm gonna get you!");
+  }
+  if (data === 'n') {
+    connection.write("Say: And your little dog!");
   }
 };
 
