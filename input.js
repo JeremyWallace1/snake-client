@@ -1,5 +1,10 @@
+const { stdin } = require("process");
+
 // setup interface to handle user input from stdin
-const setupInput = function () {
+let connection;
+
+const setupInput = (conn) => {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -8,27 +13,27 @@ const setupInput = function () {
   return stdin;
 };
 
-const handleUserInput = function () {
-  // your code here
-  process.stdin.on('data', (key) => {
-    if (key === '\u0003') {
-      console.log("Exiting the game.");
-      process.exit();
-    }
-    if (key === '\u0077') {
-      console.log("Pressed w");
-    }
-    if (key === '\u0061') {
-      console.log("Pressed a");
-    }
-    if (key === '\u0073') {
-      console.log("Pressed s");
-    }
-    if (key === '\u0064') {
-      console.log("Pressed d");
-    }
-    //process.stdout.write('.');
-  });
+const handleUserInput = function (data) {
+  if (data === '\u0003') {
+    console.log("Exiting the game.");
+    process.exit();
+  }
+
+  if (data === '\u0077') {
+    console.log("Pressed w");
+  }
+  
+  if (data === '\u0061') {
+    console.log("Pressed a");
+  }
+  
+  if (data === '\u0073') {
+    console.log("Pressed s");
+  }
+  
+  if (data === '\u0064') {
+    console.log("Pressed d");
+  }
 };
 
 module.exports = { setupInput }; // exports the function
